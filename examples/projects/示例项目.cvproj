@@ -1,0 +1,430 @@
+{
+  "format": "CurvivaProject",
+  "version": "0.0.0",
+  "app": "Curviva",
+  "saved_at": "2026-11-13T13:45:22",
+  "config": {
+    "global_cfg": {
+      "title": "Curviva 示例项目：线性拟合与高斯峰",
+      "title_fontsize": 14.0,
+      "font_family": "Arial",
+      "base_fontsize": 10.0,
+      "rows": 1,
+      "cols": 1,
+      "figsize_w": 8.0,
+      "figsize_h": 6.0,
+      "dpi": 100.0,
+      "face_color": "#FFFFFF",
+      "smart_render": true,
+      "target_points": 500,
+      "style_name": "默认"
+    },
+    "subplots": [
+      {
+        "title": "线性数据 / 高斯峰",
+        "x_axis": {
+          "label": "x",
+          "auto_scale": true,
+          "min_val": 0.0,
+          "max_val": 10.0,
+          "tick_mode": "auto",
+          "num_ticks": 5,
+          "tick_step": 1.0,
+          "decimal_places": -1,
+          "scale": "linear",
+          "invert": false
+        },
+        "y_axis": {
+          "label": "y",
+          "auto_scale": true,
+          "min_val": 0.0,
+          "max_val": 10.0,
+          "tick_mode": "auto",
+          "num_ticks": 5,
+          "tick_step": 1.0,
+          "decimal_places": -1,
+          "scale": "linear",
+          "invert": false
+        },
+        "y2_axis": {
+          "label": "Y2",
+          "auto_scale": true,
+          "min_val": 0.0,
+          "max_val": 10.0,
+          "tick_mode": "auto",
+          "num_ticks": 5,
+          "tick_step": 1.0,
+          "decimal_places": -1,
+          "scale": "linear",
+          "invert": false
+        },
+        "show_y2": true,
+        "show_legend": true,
+        "legend_loc": "best",
+        "legend_fontsize": 10.0,
+        "legend_frame": true,
+        "show_top": true,
+        "show_bottom": true,
+        "show_left": true,
+        "show_right": true,
+        "grid_show": true,
+        "grid_axis": "both",
+        "grid_linestyle": "--",
+        "grid_alpha": 0.5
+      }
+    ],
+    "curves": [
+      {
+        "label": "原始数据",
+        "dataset_name": "01_线性拟合",
+        "x_column": "x",
+        "y_column": "y",
+        "plot_type": "scatter",
+        "color": "#1f77b4",
+        "linestyle": "None",
+        "linewidth": 1.5,
+        "marker": "o",
+        "markersize": 6.0,
+        "alpha": 1.0,
+        "bar_width": 0.8,
+        "subplot_index": 0,
+        "visible": true,
+        "y_axis": "left",
+        "error_y_column": "",
+        "error_cap_size": 3.0
+      },
+      {
+        "label": "高斯峰",
+        "dataset_name": "02_高斯峰",
+        "x_column": "x",
+        "y_column": "Intensity",
+        "plot_type": "line",
+        "color": "#d62728",
+        "linestyle": "-",
+        "linewidth": 1.8,
+        "marker": "None",
+        "markersize": 6.0,
+        "alpha": 1.0,
+        "bar_width": 0.8,
+        "subplot_index": 0,
+        "visible": true,
+        "y_axis": "left",
+        "error_y_column": "",
+        "error_cap_size": 3.0
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "name": "01_线性拟合",
+      "file_path": "D:\\code\\deepseek_harness\\Curviva\\Curviva_v0.0.0\\examples\\data\\01_线性拟合.csv",
+      "column_order": [
+        "x",
+        "y"
+      ],
+      "columns": {
+        "x": {
+          "kind": "num",
+          "values": [
+            0.0,
+            0.3448,
+            0.6897,
+            1.0345,
+            1.3793,
+            1.7241,
+            2.069,
+            2.4138,
+            2.7586,
+            3.1034,
+            3.4483,
+            3.7931,
+            4.1379,
+            4.4828,
+            4.8276,
+            5.1724,
+            5.5172,
+            5.8621,
+            6.2069,
+            6.5517,
+            6.8966,
+            7.2414,
+            7.5862,
+            7.931,
+            8.2759,
+            8.6207,
+            8.9655,
+            9.3103,
+            9.6552,
+            10.0
+          ]
+        },
+        "y": {
+          "kind": "num",
+          "values": [
+            0.8008,
+            1.7183,
+            2.0701,
+            2.3935,
+            3.401,
+            3.7761,
+            5.1839,
+            6.7401,
+            6.2732,
+            6.9139,
+            8.3598,
+            8.9975,
+            9.5582,
+            9.609,
+            10.9189,
+            12.114,
+            11.5125,
+            12.8129,
+            12.5987,
+            13.7204,
+            14.0856,
+            15.8541,
+            15.9072,
+            17.6315,
+            18.2812,
+            18.7819,
+            17.9917,
+            20.0016,
+            21.0443,
+            21.8737
+          ]
+        }
+      },
+      "formulas": {},
+      "column_meta": {
+        "x": {
+          "long_name": "x",
+          "unit": "",
+          "comment": "",
+          "formula": "",
+          "designation": "X"
+        },
+        "y": {
+          "long_name": "y",
+          "unit": "",
+          "comment": "",
+          "formula": "",
+          "designation": "Y"
+        }
+      }
+    },
+    {
+      "name": "02_高斯峰",
+      "file_path": "D:\\code\\deepseek_harness\\Curviva\\Curviva_v0.0.0\\examples\\data\\02_高斯峰.txt",
+      "column_order": [
+        "x",
+        "Intensity"
+      ],
+      "columns": {
+        "x": {
+          "kind": "num",
+          "values": [
+            -5.0,
+            -4.8305,
+            -4.661,
+            -4.4915,
+            -4.322,
+            -4.1525,
+            -3.9831,
+            -3.8136,
+            -3.6441,
+            -3.4746,
+            -3.3051,
+            -3.1356,
+            -2.9661,
+            -2.7966,
+            -2.6271,
+            -2.4576,
+            -2.2881,
+            -2.1186,
+            -1.9492,
+            -1.7797,
+            -1.6102,
+            -1.4407,
+            -1.2712,
+            -1.1017,
+            -0.9322,
+            -0.7627,
+            -0.5932,
+            -0.4237,
+            -0.2542,
+            -0.0847,
+            0.0847,
+            0.2542,
+            0.4237,
+            0.5932,
+            0.7627,
+            0.9322,
+            1.1017,
+            1.2712,
+            1.4407,
+            1.6102,
+            1.7797,
+            1.9492,
+            2.1186,
+            2.2881,
+            2.4576,
+            2.6271,
+            2.7966,
+            2.9661,
+            3.1356,
+            3.3051,
+            3.4746,
+            3.6441,
+            3.8136,
+            3.9831,
+            4.1525,
+            4.322,
+            4.4915,
+            4.661,
+            4.8305,
+            5.0
+          ]
+        },
+        "Intensity": {
+          "kind": "num",
+          "values": [
+            0.08175,
+            0.10806,
+            0.09554,
+            0.09979,
+            0.14657,
+            0.10001,
+            0.11994,
+            0.14465,
+            0.11306,
+            0.13779,
+            0.17212,
+            0.22712,
+            0.2905,
+            0.46372,
+            0.67205,
+            0.78191,
+            0.98744,
+            1.03677,
+            0.99066,
+            0.95069,
+            0.77771,
+            0.60176,
+            0.56243,
+            0.58056,
+            0.64687,
+            0.82613,
+            1.02391,
+            1.302,
+            1.60537,
+            1.83834,
+            2.12233,
+            2.31786,
+            2.47213,
+            2.49024,
+            2.46195,
+            2.33862,
+            2.15881,
+            1.90581,
+            1.55855,
+            1.28459,
+            1.05232,
+            0.75119,
+            0.59489,
+            0.45154,
+            0.37176,
+            0.27693,
+            0.19694,
+            0.16063,
+            0.14179,
+            0.17326,
+            0.11718,
+            0.11635,
+            0.1307,
+            0.11785,
+            0.11545,
+            0.09231,
+            0.11978,
+            0.10894,
+            0.14916,
+            0.13633
+          ]
+        }
+      },
+      "formulas": {},
+      "column_meta": {
+        "x": {
+          "long_name": "Position",
+          "unit": "um",
+          "comment": "扫描位置",
+          "formula": "",
+          "designation": "X"
+        },
+        "Intensity": {
+          "long_name": "Intensity",
+          "unit": "a.u.",
+          "comment": "荧光强度",
+          "formula": "",
+          "designation": "Y"
+        }
+      }
+    }
+  ],
+  "workspace": {
+    "script": "",
+    "fit_summary": [],
+    "analysis_log": [],
+    "notes": "",
+    "tree": {
+      "project_name": "未命名项目",
+      "root": {
+        "id": "root",
+        "name": "未命名项目",
+        "kind": "root",
+        "ref": "",
+        "note": "",
+        "expanded": true,
+        "children": [
+          {
+            "id": "folder_data",
+            "name": "数据表",
+            "kind": "folder",
+            "ref": "",
+            "note": "",
+            "expanded": true,
+            "children": [
+              {
+                "id": "6dc901c558",
+                "name": "示例数据",
+                "kind": "folder",
+                "ref": "",
+                "note": "",
+                "expanded": true,
+                "children": [
+                  {
+                    "id": "371c83790b",
+                    "name": "01_线性拟合",
+                    "kind": "sheet",
+                    "ref": "01_线性拟合",
+                    "note": "",
+                    "expanded": true,
+                    "children": []
+                  },
+                  {
+                    "id": "cee526e6a0",
+                    "name": "02_高斯峰",
+                    "kind": "sheet",
+                    "ref": "02_高斯峰",
+                    "note": "",
+                    "expanded": true,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
